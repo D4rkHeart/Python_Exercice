@@ -19,6 +19,11 @@ def bodyArrow(size):
         print(numSpaceBefore*space + "*" + numSpaceAfter*space + "*")
         numSpaceBefore -= 1
         numSpaceAfter += 2
+        
+# Draw the base of the arrow 
+def baseArrow(size):
+    baseSize = (size*2)+1
+    print(baseSize*"*" )
 
 # Input verification
 while sizeArrow < 2 or sizeArrow > 20:
