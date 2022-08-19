@@ -3,15 +3,6 @@ errors=0
 secretWord =[]
 revealedWord =[]
 
-# Split the word in a list
-for letter in word :
-    secretWord.append(letter)
-
-# Succession of underscores of the same length as the word
-
-for i in range(len(secretWord)):
-    revealedWord.append("_")
-
 # Create a string from the list
 def append(list):
     for i in range(len(list)):
@@ -37,12 +28,24 @@ def victory(revealedWord):
     else :
         return False
 
-# Main function        
+# Main function
 def game():
     letter = input("\n Enter a letter: \n")
-    wordRevealed(letter,revealedWord)
-    append(revealedWord)
-    return errors
+    # Verify user input
+    if not letter.isalpha():
+        print(("Only letters are allowed!"))
+    else: 
+        wordRevealed(letter,revealedWord)
+        append(revealedWord)
+        return errors
+
+# Split the word in a list
+for letter in word :
+    secretWord.append(letter)
+
+# Succession of underscores of the same length as the word
+for i in range(len(secretWord)):
+    revealedWord.append("_")
 
 # Loop that allows you to play without restarting the program
 while errors < 10 and not (victory(revealedWord)):
