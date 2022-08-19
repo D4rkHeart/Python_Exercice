@@ -36,3 +36,12 @@ def victory(revealedWord):
         return True
     else :
         return False
+
+# Loop that allows you to play without restarting the program
+while errors < 10 and not (victory(revealedWord)):
+    game()
+    if errors == 10:
+        print("\n You failed: ", errors, "times \n")
+        print("So sorry but you loose")
+    if victory(revealedWord):
+        print("You won !")
