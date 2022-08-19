@@ -29,3 +29,10 @@ def wordRevealed(letter, revealedWord):
         errors += 1
     print("You failed: ", errors, "times")
     return revealedWord, errors
+
+# Define is the player won or not
+def victory(revealedWord):
+    if (errors < 9) and (revealedWord == secretWord):
+        return True
+    else :
+        return False
