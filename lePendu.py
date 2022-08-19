@@ -37,6 +37,13 @@ def victory(revealedWord):
     else :
         return False
 
+# Main function        
+def game():
+    letter = input("\n Enter a letter: \n")
+    wordRevealed(letter,revealedWord)
+    append(revealedWord)
+    return errors
+
 # Loop that allows you to play without restarting the program
 while errors < 10 and not (victory(revealedWord)):
     game()
