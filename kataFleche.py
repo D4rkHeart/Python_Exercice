@@ -30,7 +30,13 @@ def tailArrow(size):
     tailArrowSize = size 
     for i in range (size):
         print(tailArrowSize*space + "*")
-        
+
+# Call of the functions
+headArrow(sizeArrow)
+bodyArrow(sizeArrow)
+baseArrow(sizeArrow)
+tailArrow(sizeArrow)
+
 # Input verification
 while sizeArrow < 2 or sizeArrow > 20:
     print("ERROR: Please enter a number between 2 and 20")
