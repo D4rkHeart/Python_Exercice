@@ -11,3 +11,8 @@ for letter in word :
 print(secretWord)
 for i in range(len(secretWord)):
     revealedWord.append("_")
+
+# Create a string from the list
+def append(list):
+    for i in range(len(list)):
+        print(list[i], " ", end="")
