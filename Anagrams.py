@@ -27,3 +27,8 @@ def anagram(word1, word2):
         if compared[c] != 0:
             return False
     return True
+
+# Optimized function
+# def anagram(word1, word2):
+#     return sorted(word1) == sorted(word2)
+anagrams(words, words)
