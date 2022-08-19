@@ -8,7 +8,7 @@ for letter in word :
     secretWord.append(letter)
 
 # Succession of underscores of the same length as the word
-print(secretWord)
+
 for i in range(len(secretWord)):
     revealedWord.append("_")
 
@@ -16,3 +16,16 @@ for i in range(len(secretWord)):
 def append(list):
     for i in range(len(list)):
         print(list[i], " ", end="")
+
+# Display the choosen letter and count errors
+def wordRevealed(letter, revealedWord):
+    match = 0
+    for i in range(len(revealedWord)):
+        if secretWord[i] == letter:
+            match += 1
+            revealedWord[i] = letter
+    if match == 0:
+        global errors
+        errors += 1
+    print("You failed: ", errors, "times")
+    return revealedWord, errors
