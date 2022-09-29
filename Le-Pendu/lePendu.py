@@ -4,24 +4,19 @@ secretWord =[]
 revealedWord =[]
 lettersUsed =[]
 
+# Verify if the input letter is already used or not
 def usedLetters(letter):
-    global lettersUsed
-    used = False
-    # Add users input letter to a list
-    for i in lettersUsed:
-        used = used or (letter==i)
-    if used:
+    if letter in lettersUsed:
         print("You already used this letter")
     else:
         lettersUsed.append(letter)
     print("Used letters :", lettersUsed)
 
 # Create a string from the list
-def append(list):
-    for i in range(len(list)):
-        print(list[i], " ", end="")
+def display(list):
+    print(" ".join(list))
 
-# Display the choosen letter and count errors
+#Display the choosen letter and count errors
 def wordRevealed(letter, revealedWord):
     match = 0
     for i in range(len(revealedWord)):
@@ -29,7 +24,7 @@ def wordRevealed(letter, revealedWord):
             match += 1
             revealedWord[i] = letter
     if match == 0:
-        global errors
+#        global errors
         errors += 1
     usedLetters(letter)
     print("You failed: ", errors, "times")
@@ -52,7 +47,7 @@ def game():
         print(("Only ONE letter are allowed!"))
     else: 
         wordRevealed(letter,revealedWord)
-        append(revealedWord)
+        display(revealedWord)
         return errors
 # Split the word in a list
 for letter in word :
